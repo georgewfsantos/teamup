@@ -1,18 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Container } from "./styles";
+
+import { Header } from "@components/Header";
+import { Heading } from "@components/Heading";
+import { GroupCard } from "@components/GroupCard";
 
 export function Groups() {
   return (
-    <View style={styles.container}>
-      <Text>Groups</Text>
-    </View>
+    <Container>
+      <Header />
+      <Heading title="Turmas" subtitle="jogue com a sua turma" />
+
+      <GroupCard title="Galera do Ignite" onPress={() => {}} />
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

@@ -7,11 +7,9 @@ import {
   Roboto_700Bold,
 } from "@expo-google-fonts/roboto";
 
-import { CreateGroup } from "@screens/CreateGroup";
 import { Loading } from "@components/Loading";
-import { Groups } from "@screens/Groups";
 import theme from "./src/theme";
-import { Players } from "@screens/Players";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,7 +23,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Players /> : <Loading />}
+      {fontsLoaded ? <Routes /> : <Loading />}
     </ThemeProvider>
   );
 }

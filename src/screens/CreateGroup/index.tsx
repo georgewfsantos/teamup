@@ -23,7 +23,7 @@ export function CreateGroup() {
   async function handleGroupCreation() {
     try {
       if (!group.trim().length) {
-        throw new AppError("Você precisa digitar o nome do grupo.");
+        throw new AppError("Você precisa digitar o nome da turma.");
       }
 
       const storedGroups = await getGroupsFromStorage();
@@ -31,7 +31,7 @@ export function CreateGroup() {
       const groupNameIsTaken = storedGroups.includes(group);
 
       if (groupNameIsTaken) {
-        throw new AppError("Já existe um grupo cadastrado com este nome.");
+        throw new AppError("Já existe uma turma cadastrado com este nome.");
       }
 
       await AsyncStorage.setItem(
@@ -41,9 +41,9 @@ export function CreateGroup() {
       navigation.navigate("Players", { group });
     } catch (error) {
       if (error instanceof AppError) {
-        Alert.alert("Criação de Grupo", error.message);
+        Alert.alert("Criação de Turma", error.message);
       } else {
-        Alert.alert("Criação de Grupo", "Não foi possível criar o grupo");
+        Alert.alert("Criação de Turma", "Não foi possível criar a turma");
       }
     }
   }

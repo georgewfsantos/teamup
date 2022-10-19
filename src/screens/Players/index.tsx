@@ -62,7 +62,9 @@ export function Players() {
         ).length > 0;
 
       if (playerNameIsTaken) {
-        throw new AppError("Já existe uma pessoa com este nome no time");
+        throw new AppError(
+          "Já existe uma pessoa com este nome em um dos times."
+        );
       }
 
       await AsyncStorage.setItem(
@@ -105,8 +107,8 @@ export function Players() {
 
   async function handleGroupRemoval() {
     Alert.alert(
-      "Remoção de Grupos",
-      "Tem certeza que deseja remover este grupo?",
+      "Remoção de Turmas",
+      "Tem certeza que deseja remover esta turma?",
       [
         { text: "Não", style: "cancel" },
         {
